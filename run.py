@@ -15,8 +15,8 @@ def hello_monkey():
 
  
 # Find these values at https://twilio.com/user/account
-    account_sid = "AC39492bb1f7999a7d44f9809ed9b55f93"
-    auth_token = "84a048734ff992a96cd50422c33e29dc"
+    account_sid = "ACe9ba7785edc82998086f04dd373d64a4"
+    auth_token = "c4db12ef7c055debf537c147db68f006"
     client = TwilioRestClient(account_sid, auth_token)
      
     message = client.sms.messages.create(to="+17164796637", from_="+12088164276",
