@@ -1,6 +1,8 @@
 from flask import Flask, request, redirect
-import twilio.twiml
+from hungermob.app.main.models import MessageSession, UserProfile
+
 from twilio.rest import TwilioRestClient
+import twilio.twiml
 
 app = Flask(__name__)
  
@@ -14,14 +16,17 @@ def hello_monkey():
     account_sid = "ACc34c6db115eb6f7fa3ffb5efb10f2ec3"
     auth_token = "07ec4e439d0025ae71b28509cc801857"
 
-    #incoming_msg_num = request.values.get('From', None)
+    incoming_msg_num = request.values.get('From', None)
     from_phone = "+12067456226"
     #now do a query on the database to pull out the conversation
+    users = UserProfile.objects.filter(phone_number=incoming_msg_num)
+    if (len(users) != 0):
+        user_phone = users[0].phone_number
 
     msg_body = request.values.get('Body', None)
-    
+    msg_body += user_phone
     #use number associated with the msg sender to find whom to send to
-    to_phone = "+17164796637"
+    to_phone = "+12083051792"
 
 
     client = TwilioRestClient(account_sid, auth_token)
