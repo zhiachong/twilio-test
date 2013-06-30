@@ -21,7 +21,7 @@ def hello_monkey():
     #resp = twilio.twiml.Response()
 
     client = TwilioRestClient(account_sid, auth_token)
-    mesasge = client.sms.messages.create(to=to_phone, from_=from_phone, body=msg_body)
+    message = client.sms.messages.create(to=to_phone, from_=from_phone, body=msg_body)
     
 
 
