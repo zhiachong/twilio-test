@@ -14,28 +14,14 @@ def hello_monkey():
     #finally, send the msg
 
     from_phone = request.values.get('From', None)
-    to_phone = request.values.get('To', None)
+    #to_phone = request.values.get('To', None)
+    to_phone = '17164796637'
     msg_body = request.values.get('Body', None)
     resp = twilio.twiml.Response()
 
-    
     client = TwilioRestClient(account_sid, auth_token)
     mesage = client.sms.messages.create(to=to_phone, from_=from_phone, body=msg_body)
     
-
-
-    #this is for sms
-    #resp.sms("Hello, Mobile Monkey")
-    #return  str(resp)
-
-    #this is for voice
-    #resp.say("hello boy")
-    #return str(resp)
-    
-
-    #message = client.sms.messages.create(to="+17164796637", from_="+12067456226",
-    #                                     body="Hello there!")
-        
 
 
 if __name__ == "__main__":
