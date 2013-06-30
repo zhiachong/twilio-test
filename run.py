@@ -14,8 +14,8 @@ def hello_monkey():
     account_sid = "ACc34c6db115eb6f7fa3ffb5efb10f2ec3"
     auth_token = "07ec4e439d0025ae71b28509cc801857"
 
-    #from_phone = request.values.get('From', None)
-    from_phone = "+12067566226"
+    #incoming_msg_num = request.values.get('From', None)
+    from_phone = "+12067456226"
     #now do a query on the database to pull out the conversation
 
     msg_body = request.values.get('Body', None)
